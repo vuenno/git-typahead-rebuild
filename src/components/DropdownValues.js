@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import InputDropdown from "./InputDropdown";
 
-function FetchedComp({ name, avatarlink, recommendationDisplay }) {
+function DropdownValues(props) {
   const [newName, setName] = useState("");
   const [avatarLink, setAvatarLink] = useState("");
-
+  const { name, avatarlink, recommendationDisplay, testino } = props;
   useEffect(() => {
     const loadData = () => {
       setName(name);
@@ -19,9 +19,10 @@ function FetchedComp({ name, avatarlink, recommendationDisplay }) {
         username={newName}
         profilePicture={avatarLink}
         display={recommendationDisplay}
+        testr={testino}
       />
     </>
   );
 }
 
-export default FetchedComp;
+export default DropdownValues;

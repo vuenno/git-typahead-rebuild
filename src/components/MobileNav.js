@@ -5,7 +5,6 @@ import notifs from "/Programming/typeahead/src/logos/notifs.png";
 
 function MobileNav(props) {
   const [disp, setDisp] = useState("hidden");
-  const [mobileInp, setMobileInp] = useState("hidden");
   const { setShowInput } = props;
 
   const burgerAppear = () => {

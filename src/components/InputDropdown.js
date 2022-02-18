@@ -1,10 +1,16 @@
 import React from "react";
 
-function InputDropdown({ profilePicture, username, display }) {
+function InputDropdown(props) {
+  const { profilePicture, username, display, mobDisp, testr } = props;
+
+  const navigate = () => {
+    window.open(`https://github.com/${username}`);
+  };
   return (
     <>
       <div
-        className={`absolute left-[85px] top-[62px] bg-black w-[272px] h-[50px] rounded-bl-[5px] rounded-br-[5px] flex justify-start items-center ${display}`}
+        className={`absolute left-[85px] top-[50px] bg-black w-[272px] h-[50px] rounded-bl-[5px] rounded-br-[5px] flex justify-start items-center ${display} mobile:${testr} mobile:flex mobile:absolute mobile:top-[100px] mobile:left-7 mobile:w-[90%] cursor-pointer`}
+        onClick={navigate}
       >
         <div className="w-[50px] h-full flex justify-center items-center">
           <img

@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import glogo from "/Programming/typeahead/src/logos/logo.png";
 import notfound from "/Programming/typeahead/src/logos/not_found.png";
-import FetchedComp from "./FetchedComp";
+import DropdownValues from "./DropdownValues";
 import RightSide from "./RightSide";
 import MobileNav from "./MobileNav";
 
-function Navbar({ mobileDisplayInput }) {
+function Navbar() {
   const buttons = ["Pull requests", "Issues", "Marketplace", "Explore"];
   const inpRef = useRef();
   const [user, setUser] = useState([]);
@@ -13,6 +13,7 @@ function Navbar({ mobileDisplayInput }) {
   const [recDisp, setDisp] = useState("hidden");
   const [setInp, setShowInput] = useState(false);
   const [mobRespInp, setMobInp] = useState("hidden");
+  const [test, setTest] = useState("");
 
   useEffect(() => {
     const loadUsers = () => {
@@ -34,8 +35,10 @@ function Navbar({ mobileDisplayInput }) {
     }
     if (inpRef.current.value === "") {
       setDisp("hidden");
+      setTest("hidden");
     } else {
       setDisp("flex");
+      setTest("flex");
     }
   }, [user]);
 
@@ -62,6 +65,14 @@ function Navbar({ mobileDisplayInput }) {
       setMobInp("block");
     }
   }, [setInp]);
+
+  useEffect(() => {
+    if (mobRespInp === "hidden") {
+      setTest("hidden");
+    } else {
+      setTest("hidden");
+    }
+  }, [mobRespInp]);
 
   return (
     <>
@@ -93,10 +104,11 @@ function Navbar({ mobileDisplayInput }) {
             ))}
           </div>
         </div>
-        <FetchedComp
+        <DropdownValues
           name={recUsers.name}
           avatarlink={recUsers.avatar_link}
           recommendationDisplay={recDisp}
+          testino={test}
         />
         <RightSide />
       </div>
