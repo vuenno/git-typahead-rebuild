@@ -46,7 +46,7 @@ function Navbar() {
     };
   }
 
-  const deb = useCallback(debounce((change) => setUser(change), 400));
+  const deb = useCallback(debounce((change) => setUser(change), 200));
 
   const handleChange = (change) => {
     deb(change);
@@ -57,7 +57,6 @@ function Navbar() {
       <div className="w-full h-[62px] flex justify-between bg-[#21262d] items-center">
         <div className="w-[40%] h-full flex justify-evenly items-center">
           <img src={glogo} className="w-[50px] h-[50px]" alt="github_logo" />
-
           <input
             type="text"
             className={`bg-black rounded-[5px] h-[30px] ml-2 border-gray-600 border-[1px] text-[14px] p-3 w-[272px] outline-none text-white text-start placeholder-gray-300`}
@@ -76,14 +75,13 @@ function Navbar() {
                 {b[1]}
               </p>
             ))}
-
-            <FetchedComp
-              name={recUsers.name}
-              avatarlink={recUsers.avatar_link}
-              recommendationDisplay={recDisp}
-            />
           </div>
         </div>
+        <FetchedComp
+          name={recUsers.name}
+          avatarlink={recUsers.avatar_link}
+          recommendationDisplay={recDisp}
+        />
         <RightSide />
       </div>
     </>
