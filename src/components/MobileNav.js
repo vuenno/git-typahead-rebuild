@@ -3,11 +3,14 @@ import glogo from "/Programming/typeahead/src/logos/logo.png";
 import burger from "/Programming/typeahead/src/logos/burger.png";
 import notifs from "/Programming/typeahead/src/logos/notifs.png";
 
-function MobileNav() {
+function MobileNav(props) {
   const [disp, setDisp] = useState("hidden");
+  const [mobileInp, setMobileInp] = useState("hidden");
+  const { setShowInput } = props;
 
   const burgerAppear = () => {
     setDisp("flex");
+    setShowInput((prev) => !prev);
     if (disp === "flex") {
       setDisp("hidden");
     }
@@ -21,9 +24,10 @@ function MobileNav() {
             src={burger}
             className="w-[20px] h-[20px] cursor-pointer"
             onClick={burgerAppear}
+            alt="burger"
           />
-          <img src={glogo} className="w-[50px] h-[50px]" />
-          <img src={notifs} className="w-[25px] h-[25px]" />
+          <img src={glogo} className="w-[50px] h-[50px]" alt="github_logo" />
+          <img src={notifs} className="w-[25px] h-[25px]" alt="notifs" />
         </div>
       </div>
       <div

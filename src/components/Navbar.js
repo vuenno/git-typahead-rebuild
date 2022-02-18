@@ -5,12 +5,14 @@ import FetchedComp from "./FetchedComp";
 import RightSide from "./RightSide";
 import MobileNav from "./MobileNav";
 
-function Navbar() {
+function Navbar({ mobileDisplayInput }) {
   const buttons = ["Pull requests", "Issues", "Marketplace", "Explore"];
   const inpRef = useRef();
   const [user, setUser] = useState([]);
   const [recUsers, setRec] = useState({ name: "", avatar_link: "", id: "" });
   const [recDisp, setDisp] = useState("hidden");
+  const [setInp, setShowInput] = useState(false);
+  const [mobRespInp, setMobInp] = useState("hidden");
 
   useEffect(() => {
     const loadUsers = () => {
@@ -53,15 +55,27 @@ function Navbar() {
     deb(change);
   };
 
+  useEffect(() => {
+    if (setInp === false) {
+      setMobInp("hidden");
+    } else {
+      setMobInp("block");
+    }
+  }, [setInp]);
+
   return (
     <>
-      <MobileNav />
-      <div className="w-full h-[62px] flex justify-between bg-[#21262d] items-center mobile:hidden">
+      <MobileNav setShowInput={setShowInput} />
+      <div className="w-full h-[62px] flex justify-between bg-[#21262d] items-center mobile:h-[5px]">
         <div className="w-[40%] h-full flex justify-evenly items-center">
-          <img src={glogo} className="w-[50px] h-[50px]" alt="github_logo" />
+          <img
+            src={glogo}
+            className="w-[50px] h-[50px] mobile:hidden"
+            alt="github_logo"
+          />
           <input
             type="text"
-            className={`bg-black rounded-[5px] h-[30px] ml-2 border-gray-600 border-[1px] text-[14px] p-3 w-[272px] outline-none text-white text-start placeholder-gray-300`}
+            className={`bg-black rounded-[5px] h-[30px] ml-2 mobile:absolute mobile:top-[70px] mobile:${mobRespInp} mobile:left-[20px] mobile:w-[90%] border-gray-600 border-[1px] text-[14px] p-3 w-[272px] outline-none text-white text-start placeholder-gray-300`}
             placeholder="Search or jump to..."
             id="input-search"
             autoComplete="false"
