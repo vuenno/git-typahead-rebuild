@@ -3,6 +3,7 @@ import glogo from "/Programming/typeahead/src/logos/logo.png";
 import notfound from "/Programming/typeahead/src/logos/not_found.png";
 import FetchedComp from "./FetchedComp";
 import RightSide from "./RightSide";
+import MobileNav from "./MobileNav";
 
 function Navbar() {
   const buttons = ["Pull requests", "Issues", "Marketplace", "Explore"];
@@ -54,7 +55,8 @@ function Navbar() {
 
   return (
     <>
-      <div className="w-full h-[62px] flex justify-between bg-[#21262d] items-center">
+      <MobileNav />
+      <div className="w-full h-[62px] flex justify-between bg-[#21262d] items-center mobile:hidden">
         <div className="w-[40%] h-full flex justify-evenly items-center">
           <img src={glogo} className="w-[50px] h-[50px]" alt="github_logo" />
           <input
@@ -66,7 +68,7 @@ function Navbar() {
             ref={inpRef}
             onChange={(e) => handleChange(e.target.value)}
           />
-          <div className="w-[50%] h-full flex justify-evenly items-center">
+          <div className="w-[50%] h-full flex justify-evenly items-center mobile:hidden">
             {Object.entries(buttons).map((b, index) => (
               <p
                 className="font-semibold text-[14px] text-white hover:opacity-50 cursor-pointer"

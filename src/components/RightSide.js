@@ -7,7 +7,7 @@ import userlogo from "/Programming/typeahead/src/logos/userlogo.png";
 function RightSide() {
   return (
     <>
-      <div className="w-1/2 h-full flex justify-end items-center mr-5">
+      <div className="w-1/2 h-full flex justify-end items-center mr-5 mobile:hidden">
         <div className="w-[14%] h-full flex justify-evenly items-center ">
           <img
             src={notifs}
