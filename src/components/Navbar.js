@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
-import glogo from "/Programming/typeahead/src/logos/logo.png";
-import notfound from "/Programming/typeahead/src/logos/not_found.png";
+import glogo from "./logos/logo.png";
+import notfound from "./logos/not_found.png";
 import DropdownValues from "./DropdownValues";
 import RightSide from "./RightSide";
 import MobileNav from "./MobileNav";

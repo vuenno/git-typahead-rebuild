@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import glogo from "/Programming/typeahead/src/logos/logo.png";
-import burger from "/Programming/typeahead/src/logos/burger.png";
-import notifs from "/Programming/typeahead/src/logos/notifs.png";
+import glogo from "./logos/logo.png";
+import burger from "./logos/burger.png";
+import notifs from "./logos/notifs.png";
 
 function MobileNav(props) {
   const [disp, setDisp] = useState("hidden");

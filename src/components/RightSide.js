@@ -1,8 +1,8 @@
 import React from "react";
-import caret from "/Programming/typeahead/src/logos/caret.png";
-import plus from "/Programming/typeahead/src/logos/plus.png";
-import notifs from "/Programming/typeahead/src/logos/notifs.png";
-import userlogo from "/Programming/typeahead/src/logos/userlogo.png";
+import caret from "./logos/caret.png";
+import plus from "./logos/plus.png";
+import notifs from "./logos/plus.png";
+import userlogo from "./logos/userlogo.png";
 
 function RightSide() {
   return (
