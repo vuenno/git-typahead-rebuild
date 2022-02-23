@@ -1,7 +1,7 @@
 import React from "react";
 import caret from "./logos/caret.png";
 import plus from "./logos/plus.png";
-import notifs from "./logos/plus.png";
+import notifs from "./logos/notifs.png";
 import userlogo from "./logos/userlogo.png";
 
 function RightSide() {
